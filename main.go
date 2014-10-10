@@ -37,7 +37,11 @@ func main() {
   for i := 0; i < numSystems; i++ {
     fmt.Print(path.Base(systems[i]), " <- read.csv(sep=\" \",header=FALSE,file=\"",systems[i],"\")")
     fmt.Println()
-    fmt.Print(path.Base(systems[i]), " <- ", path.Base(systems[i]),"$V1[1:50]")
+    fmt.Print(path.Base(systems[i]), " <- ", path.Base(systems[i]),"$V1")
+    fmt.Println()
+    fmt.Print("n <- length(", path.Base(systems[i]),")")
+    fmt.Println()
+    fmt.Print(path.Base(systems[i]), " <- ", path.Base(systems[i]),"[1:n-1]")
     fmt.Println()
   }
   //fmt.Println("exactRankTests")
